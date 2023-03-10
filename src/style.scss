@@ -1,0 +1,95 @@
+@import url(/node_modules/normalize.css/normalize.css);
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(188, 187, 223);
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 10fr;
+    width: 98vw;
+    height: 98vh;
+    justify-content: center;
+    gap: 40px;
+}   
+
+#navigation-bar {
+    border: 1px grey solid;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+}
+
+#sidebar {
+    border: 1px grey solid;
+}
+
+#daily-todo-overview {
+    display: grid;
+    padding: 2rem;
+    justify-content: center;
+    border: 1px grey solid;
+}
+#todo-container{
+    display: grid;
+  
+    width: 40rem;
+    aspect-ratio: 3.5;
+    padding: 0.3rem;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    border: 1px solid grey;
+    gap: 10px;
+}
+
+#todo-container input {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+} 
+
+#todo-container textarea {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    resize: none;
+}
+
+#todo-container input[type = "date"] {
+    grid-column: 4;
+    grid-row: 1;
+    cursor: pointer;
+}
+
+#todo-container input[type = "checkbox"] {
+    grid-row: 3;
+    grid-column: 4;
+    cursor: pointer;
+}
+
+#todo-container {
+    button {
+        grid-row: 3;
+        width: 40px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+   #priority-one {
+    background-color: green;
+   }
+   #priority-two {
+    background-color: orange;
+   }
+   #priority-three {
+    background-color: red;
+   }
+   [type = "submit"] {
+    width: 100%;
+   }
+}

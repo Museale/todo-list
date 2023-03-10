@@ -1,20 +1,26 @@
-console.log('hello there')
+import './style.scss';
+import { createTodo, renderTodo } from './todo';
 
-import { compareAsc, format } from 'date-fns'
+const renderDOM = (() => {
 
-format(new Date(2014, 1, 11), 'yyyy-MM-dd')
-//=> '2014-02-11'
+    const container = document.createElement('div');
+        container.id = 'container';
+        document.body.appendChild(container);
 
-const dates = [
-  new Date(1995, 6, 2),
-  new Date(1987, 1, 11),
-  new Date(1989, 6, 10),
-]
-dates.sort(compareAsc)
-//=> [
-//   Wed Feb 11 1987 00:00:00,
-//   Mon Jul 10 1989 00:00:00,
-//   Sun Jul 02 1995 00:00:00
-// ]
+    const navigationBar = document.createElement('div');
+        navigationBar.id = 'navigation-bar';
 
-console.log(dates)
+    const sidebar = document.createElement('div');
+        sidebar.id = 'sidebar';
+
+    const dailyTodoOverview = document.createElement('div');
+        dailyTodoOverview.id = 'daily-todo-overview';
+    
+        container.appendChild(navigationBar);
+        container.appendChild(sidebar);
+        container.appendChild(dailyTodoOverview);
+        renderTodo();
+        const todo = createTodo('This is a Title', 'This is a Description', 'This is a date', 'This is a Priority', 'This is a note');
+        console.log(todo);
+        
+})();

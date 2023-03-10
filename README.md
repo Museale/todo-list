@@ -1,6 +1,6 @@
 # todo-list
 
-A Javascript todo-list application made as a task from The Odin Project that should help organize your todos. 
+A Javascript todo-list application made as a task from The Odin Project that should help organize your todos.
 
 ## Roadmap
 
