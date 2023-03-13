@@ -1,6 +1,7 @@
 import './style.scss';
-import { createTodo } from './todo';
+import { newTodo } from './todo';
 import { renderTodo } from './DOM_modoule';
+
 
 const renderDOM = (() => {
 
@@ -20,7 +21,8 @@ const renderDOM = (() => {
         container.appendChild(navigationBar);
         container.appendChild(sidebar);
         container.appendChild(dailyTodoOverview);
-        createTodo();
+        newTodo();
         renderTodo();        
+
 })();
 

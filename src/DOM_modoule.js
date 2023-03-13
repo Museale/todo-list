@@ -1,11 +1,12 @@
-import { createTodo } from "./todo";
+import { newTodo } from "./todo";
 
 const todoArray = [];
 
 export const renderTodo = () => {
-
+    
     const todoContainer = document.createElement('div');
          todoContainer.id = 'todo-container';
+         todoContainer.classList.add('hidden');
  
      const inputTitle = document.createElement('input');
          inputTitle.setAttribute('type', 'text');
@@ -29,13 +30,30 @@ export const renderTodo = () => {
          submitTodo.setAttribute('type', 'submit');
          submitTodo.textContent = 'Save';
     
-    submitTodo.addEventListener('click', () => {
-        let addNewTodo = createTodo(inputTitle.value, inputDescription.value, inputDueDate.value);
-        todoArray.push(addNewTodo);
-       renderTodo();
-       console.log(todoArray);
-    });
+        submitTodo.addEventListener('click', () => {
+            let addNewTodo = newTodo(inputTitle.value, inputDescription.value, inputDueDate.value);
+            todoArray.push(addNewTodo);
         
+                const todo = document.createElement('div');
+                document.getElementById('daily-todo-overview').appendChild(todo);
+
+                const checkboxBtn = document.createElement('input');
+                checkboxBtn.setAttribute('type', 'checkbox');
+
+                const todoInfo = document.createElement('div');
+                    todoInfo.id = 'todo-info';
+                    todoInfo.textContent = `${inputTitle.value + inputDescription.value + inputDueDate.value}`;
+                 
+                    todoInfo.appendChild(checkboxBtn);
+                    todo.appendChild(todoInfo);
+
+           
+        });
+
+        priorityOne.addEventListener('click', () => {
+            newTodo.priority = 'green';
+        });
+            
            document.getElementById('daily-todo-overview').appendChild(todoContainer);
                  todoContainer.appendChild(inputTitle);
                  todoContainer.appendChild(inputDescription);
