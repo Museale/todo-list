@@ -3,7 +3,6 @@
 
  module.exports = {
    mode: 'development',
-   watch: true,
    entry: {
      index: './src/index.js',
 
